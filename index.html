@@ -1,19 +1,21 @@
 <!--  -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>software</title>
     <style>
-        nav{
+        nav {
             display: flex;
             justify-content: space-between;
             /* border: 3px solid; */
             align-items: center;
         }
-        div.link a{ 
+
+        div.link a {
             /* border: 4px solid blue; */
             padding: 5px;
             border: 1px solid;
@@ -21,81 +23,126 @@
             color: blueviolet;
             font-weight: bold;
         }
-        #section-home{
+
+        #section-home {
             display: flex;
             margin: 20px;
-            border-radius: 15px ;
+            border-radius: 15px;
             height: 300px;
 
-justify-content: space-between;
-background-color:rgb(198, 221, 230);
+            justify-content: space-between;
+            background-color: rgb(198, 221, 230);
 
-/* height: 300px; */
+            /* height: 300px; */
         }
-        #section-home img{
+
+        #section-home img {
             /* width: 300px; */
             height: 300px;
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
-            
 
-        }  
-        #section-home div:first-child{
+
+        }
+
+        #section-home div:first-child {
             padding: 20px;
-            
 
-        } 
-       
+
+        }
+        .two-project{
+            display: flex;
+        }
+        
+        .two-project>div{
+            width: 50%;
+            /* border: 2px solid; */
+            padding: 20px;
+            border-radius: 20px;
+
+        }
+        #section-project{
+            margin: 20px;
+        }
+        .two-project img{
+            height: 300px;
+            
+        }
+        .two-project div:first-child{
+            background-color:rgb(236 235 253);
+            margin-right: 5px;
+
+        }
+        .two-project div:last-child{
+            background-color:rgb(92 123 178);
+            margin-left: 15px;
+        }
+        .third-project{
+            margin: 20px 0;
+            padding: 20px;
+            /* background-color:rgb(92 123 178); */
+         background-image: linear-gradient(to bottom right,green ,yellow);
+            color: white;
+            border-radius: 15px;
+        }
+        .third-project img{
+            width: 400px;
+        }
     </style>
 </head>
+
 <body>
     <!-- <h1>I am Dipanshu kumar singh</h1> -->
-    <nav >
-       
+    <nav>
+
         <div>
             <!-- <div class="link"> -->
             <img src="/images/logo.png" alt="" srcset="">
         </div>
         <div>
             <div class="link">
-            <a href="section-home">Home</a>
-            <a href="section-projects">Project</a>
-            <a href="section-contact">Contact</a>
+                <a href="section-home">Home</a>
+                <a href="section-projects">Project</a>
+                <a href="section-contact">Contact</a>
+            </div>
         </div>
-        </div>
-    <!-- </div> -->
+        <!-- </div> -->
     </nav>
     <section id="section-home">
         <div>
             <h1>hey! I am Dipanshu Singh</h1>
-            <p>I am a software developer i have done too many project on the basis of fronted . I have done too many clones of e-commerece website</p>
+            <p>I am a software developer i have done too many project on the basis of fronted . I have done too many
+                clones of e-commerece website</p>
 
         </div>
         <div>
-            <img src="/images/DSC_0362.JPG"  alt="" >
+            <img src="/images/DSC_0362.JPG" alt="">
         </div>
     </section>
 
     <section id="section-project">
-        <div>
-        <div>
-            <h1>Paymento</h1>
-            <p>Personal finance mobile</p>
-            <img src="/images/paymento.png" alt="">
-            
-        </div>
-        <div>
-            <h1>Taskit</h1>
-            <p>Task management app</p>
-            <img src="/images/taskit.png" alt="">
+        <div class="two-project " >
+            <div >
+                <h1>Paymento</h1>
+                <p>Personal finance mobile</p>
+                <img src="/images/paymento.png" alt="">
 
+            </div>
+            <div>
+                <h1>Taskit</h1>
+                <p>Task management app</p>
+                <img src="/images/taskit.png" alt="">
+
+            </div>
         </div>
-    </div>
-    <div>
-        <h1>Piyuu</h1>
-        <p>Freelancing platform for individual</p>
-        <img src="/images/piyuu.png" alt="">
-    </div>
+        <div class="third-project">
+            <h1>Piyuu</h1>
+            <p>Freelancing platform for individual</p>
+            <img src="/images/piyuu.png" alt="">
+        </div>
+
     </section>
+    
 </body>
+
 </html>
