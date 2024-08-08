@@ -1,187 +1,330 @@
-<!--  -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>software</title>
-    <style>
-        nav {
-            display: flex;
-            justify-content: space-between;
-            /* border: 3px solid; */
-            align-items: center;
-        }
-
-        div.link a {
-            /* border: 4px solid blue; */
-            padding: 5px;
-            border: 1px solid;
-            text-decoration: none;
-            color: blueviolet;
-            font-weight: bold;
-        }
-
-        #section-home {
-            display: flex;
-            margin: 20px;
-            border-radius: 15px;
-            height: 300px;
-
-            justify-content: space-between;
-            background-color: rgb(198, 221, 230);
-
-            /* height: 300px; */
-        }
-
-        #section-home img {
-            /* width: 300px; */
-            height: 300px;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-
-
-        }
-
-        #section-home div:first-child {
-            padding: 20px;
-
-
-        }
-
-        .two-project {
-            display: flex;
-        }
-
-        .two-project>div {
-            width: 50%;
-            /* border: 2px solid; */
-            padding: 20px;
-            border-radius: 20px;
-
-        }
-
-        #section-project {
-            margin: 20px;
-        }
-
-        .two-project img {
-            height: 300px;
-
-        }
-
-        .two-project div:first-child {
-            background-color: rgb(236 235 253);
-            margin-right: 5px;
-
-        }
-
-        .two-project div:last-child {
-            background-color: rgb(92 123 178);
-            margin-left: 15px;
-        }
-
-        .third-project {
-            margin: 20px 0;
-            padding: 20px;
-            /* background-color:rgb(92 123 178); */
-            background-image: linear-gradient(to bottom right, green, yellow);
-            color: white;
-            border-radius: 15px;
-        }
-
-        .third-project img {
-            width: 400px;
-        }
-        #section-contact{
-            display: flex;
-            justify-content:space-between;
-            margin: 20px;
-            padding: 20px;
-            background-image: linear-gradient(to top right,rgb(255, 89, 0),rgb(0, 21, 128));
-            border-radius: 15px ;
-            color: #fff;
-        }
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Example</title>
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+  <!-- CSS -->
+ <style>
+     * {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  html {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .logo img {
+    margin-top: 10px;
+    height: 40px;
+    width: 90px;
+    margin-bottom: 10px;
+  }
+  
+  .logo {
+    width: 200%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .top-header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .icons {
+    width: 150px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .icons i {
+    width: 40px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .offer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent background */
+    z-index: 1000;
+    transform: translateY(-100%); /* Start off-screen above */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .offer.show {
+    transform: translateY(0); /* Slide down into view */
+  }
+  
+  /* Styling for close button */
+  .close-offer i {
+    font-size: 20px;
+    color: white;
+    background-color: #555;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 20px auto; /* Centering */
+  }
+  
+  .navbar-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column; /* Stack list items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    font-size: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  hr {
+    width: 100%;
+  }
+  
+  a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: wheat;
+  }
+  
+  .toggle-offer {
+    display: none; /* Initially hide the toggle button */
+  }
+  
+  .offfer {
+    width: 100%;
+  }
+  
+  .navbar-container2 {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .navbar-container2 ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .navbar-container2 li {
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    width: 140px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width: 978px) {
+    .top-header {
+      /* Adjust top-header styles as needed */
+    }
+  
+    .offer {
+      width: 100%; /* Full width for mobile view */
+      height: 100%; /* Full height for mobile view */
+    }
+  
+    .toggle-offer {
+      display: flex;
+      justify-content: end;
+    }
+  
+    .icons {
+      display: none; /* Hide icons on smaller screens */
+    }
+  
+    .logo {
+      /* Adjust logo styles for mobile view */
+    }
+  
+    .navbar-container {
+      width: 100%;
+    }
+  
+    .navbar-container ul {
+      width: 100%;
+    }
+  
+    .navbar-container li {
+      padding: 20px;
+      line-height: 20px;
+      font-weight: 400;
+      height: 20px;
+    }
+  
+    .offfer {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 979px) {
+    .toggle-offer {
+      display: none; /* Hide toggle button on larger screens */
+    }
+  
+    .navbar-container2 {
+      display: flex; /* Show navbar-container2 on larger screens */
+    }
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+ </style>
 </head>
 
 <body>
-    <!-- <h1>I am Dipanshu kumar singh</h1> -->
-    <nav>
+  <div class='Navbar'>
+    <div class='top-header'>
+      <div class='toggle-offer' onclick="toggleOffer()">
+        <i id="toggle-icon" class="fa-solid fa-bars"></i> <!-- Toggles between bars and times icons -->
+      </div>
+      <div class='logo'>
+        <img src='//www.akirathecouture.com/cdn/shop/files/Untitled_design_10.png?v=1695132877&width=80 1x, //www.akirathecouture.com/cdn/shop/files/Untitled_design_10.png?v=1695132877&width=160 2x'
+          alt='Logo' />
+      </div>
+      <div class='icons'>
+        <a href="login.html">
+          <i class="fa-solid fa-user"></i>
+        </a>
+      </div>
+    </div>
+    <hr />
+    <div class='offfer'>
+      <div class='navbar-container2'>
+        <ul>
+          <li><a href="#">upto 40% off</a></li>
+          <li><a href='#'>Cotton wear</a></li>
+          <li><a href='#'>Anarkali</a></li>
+          <li><a href='#'>Lahenga</a></li>
+          <li><a href='#'>Drapped Dress</a></li>
+          <li><a href='#'>Party Wear</a></li>
+          <li><a href='#'>Gown</a></li>
+          <li><a href='#'>Shop All</a></li>
+        </ul>
+      </div>
+    </div>
 
-        <div>
-            <!-- <div class="link"> -->
-            <img src="/images/logo.png" alt="" srcset="">
+    <div id='offer-panel' class='offer'>
+      <div class='navbar-container'>
+        <div class='close-offer' onclick="toggleOffer()">
+          <i class="fa-solid fa-times"></i>
         </div>
-        <div>
-            <div class="link">
-                <a href="section-home">Home</a>
-                <a href="section-projects">Project</a>
-                <a href="section-contact">Contact</a>
-            </div>
-        </div>
-        <!-- </div> -->
-    </nav>
-    <section id="section-home">
-        <div>
-            <h1>hey! I am Dipanshu Singh</h1>
-            <p>I am a software developer i have done too many project on the basis of fronted . I have done too many
-                clones of e-commerece website</p>
+        <ul>
+         
+          <li>Sale upto 40% OFF
+            <hr />
+          </li>
+          <li>Cotton wear
+            <hr />
+          </li>
+          <li>Anarkali
+            <hr />
+          </li>
+          <li>Drapped Dress
+            <hr />
+          </li>
+          <li>Party Wear
+            <hr />
+          </li>
+          <li>Gown
+            <hr />
+          </li>
+          <li>Shop All
+            <hr />
+          </li>
+          <li><a href="login.html">. Login</a></li>
+        </ul>
+      </div>
+    </div>
 
-        </div>
-        <div>
-            <img src="/images/DSC_0362.JPG" alt="">
-        </div>
-    </section>
+    <hr />
+  </div>
 
-    <section id="section-project">
-        <div class="two-project ">
-            <div>
-                <h1>Paymento</h1>
-                <p>Personal finance mobile</p>
-                <img src="/images/paymento.png" alt="">
+  <!-- JavaScript -->
+  <script>
+    const toggleIcon = document.getElementById('toggle-icon');
+    const offerPanel = document.getElementById('offer-panel');
 
-            </div>
-            <div>
-                <h1>Taskit</h1>
-                <p>Task management app</p>
-                <img src="/images/taskit.png" alt="">
-
-            </div>
-        </div>
-        <div class="third-project">
-            <h1>Piyuu</h1>
-            <p>Freelancing platform for individual</p>
-            <img src="/images/piyuu.png" alt="">
-        </div>
-
-    </section>
-    <section id="section-contact">
-        <div>
-            <h1>Want to work together</h1>
-            <p>feel free to reach out for collabration or a friendly , hello</p>
-            <a href="mailto:rathoredipanshu21@gmail.com">rathoredipanshu21</a>
-        </div>
-        <div>
-            <h2>Connect with me </h2>
-            <div>
-                <a href="https://www.linkedin.com/in/dipanshu-rathore-65407b246/">
-                    <img src="/images/linkedin.png" alt="">
-                </a>
-
-                <a href="https://www.instagram.com/r.a.t.h.o.r.e21/">
-                    <img src="/images/twitter.png" alt="">
-                </a>
-
-
-            </div>
-        </div>
-
-    </section>
-
+    function toggleOffer() {
+      const showOffer = offerPanel.classList.toggle('show');
+      toggleIcon.className = showOffer ? 'fa-solid fa-times' : 'fa-solid fa-bars';
+    }
+  </script>
 </body>
 
 </html>
